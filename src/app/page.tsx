@@ -88,7 +88,7 @@ const page = () => {
   return (
     <div className="wrapper font-NHD">
       {/* Hero Section */}
-      <section className="hero relative h-screen w-full overflow-hidden p-4 text-white md:p-10">
+      <section className="hero relative h-[100svh] w-full overflow-hidden p-4 text-white md:p-10">
         <div className="bgimg2 absolute inset-0 z-0 scale-100">
           <Image
             src="/coan2bg.webp"
