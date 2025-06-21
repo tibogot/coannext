@@ -99,8 +99,12 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
                   href={path}
                   onClick={() => handleNavClick(path)}
                   className={`transition-colors duration-200 hover:text-orange-500 ${
-                    isDarkMode ? "text-white" : "text-black"
-                  } ${pathname === path ? "text-orange-500" : ""}`}
+                    pathname === path
+                      ? "text-orange-500"
+                      : isDarkMode
+                      ? "text-white"
+                      : "text-black"
+                  }`}
                 >
                   {name}
                 </Link>
@@ -112,8 +116,12 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
               href="/contact"
               onClick={() => handleNavClick("/contact")}
               className={`rounded-md px-4 py-1.5 transition-colors duration-200 hover:text-orange-500 ${
-                isDarkMode ? "bg-white/10 text-white" : "bg-black/10 text-black"
-              } ${pathname === "/contact" ? "text-orange-500" : ""}`}
+                pathname === "/contact"
+                  ? "text-orange-500"
+                  : isDarkMode
+                  ? "bg-white/10 text-white"
+                  : "bg-black/10 text-black"
+              }`}
             >
               Contact
             </Link>
