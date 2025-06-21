@@ -7,6 +7,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Copy from "@/components/Copy1";
+import HomeCard from "../components/CardsScroll";
+import Chart from "@/components/Chart";
+import ProfilesTicker from "@/components/ProfilesTicker";
 
 // Register GSAP plugins
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -226,6 +229,8 @@ const page = () => {
         </section>
       </div>
 
+      <HomeCard />
+
       {/* Vision Section */}
       <section className="pre-black px-4 py-10 md:px-10 md:pb-30">
         <h4 className="text-orange-400">Our vision</h4>
@@ -280,12 +285,7 @@ const page = () => {
         </div>
       </section>
 
-      {/* Chart Placeholder */}
-      <section className="py-20 px-4 md:px-10">
-        <div className="w-full h-64 bg-gray-100 flex items-center justify-center">
-          <p className="text-gray-600">Chart Component Placeholder</p>
-        </div>
-      </section>
+      <Chart />
 
       {/* Team Section */}
       <section className="relative flex w-full overflow-hidden px-4 pt-10 pb-24 md:px-10 md:pt-20">
@@ -301,11 +301,13 @@ const page = () => {
       </section>
 
       {/* ProfilesTicker Placeholder */}
-      <section className="py-10">
+
+      <ProfilesTicker />
+      {/* <section className="py-10">
         <div className="w-full h-32 bg-gray-100 flex items-center justify-center">
           <p className="text-gray-600">Profiles Ticker Placeholder</p>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Placeholder */}
       <section className="py-20 px-4 md:px-10">
