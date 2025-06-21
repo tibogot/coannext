@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
     <>
       {/* Main Navbar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-18 px-4 transition-all duration-300 select-none md:px-10 font-NHD ${
+        className={`fixed top-0 left-0 right-0 z-60 h-18 px-4 transition-all duration-300 select-none md:px-10 font-NHD ${
           isDarkMode ? "bg-transparent" : "bg-white"
         }`}
       >
@@ -155,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-60 transition-transform duration-300 md:hidden ${
+        className={`fixed inset-0 z-70 transition-transform duration-300 md:hidden ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
