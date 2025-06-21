@@ -10,6 +10,8 @@ import Copy from "@/components/Copy1";
 import HomeCard from "../components/CardsScroll";
 import Chart from "@/components/Chart";
 import ProfilesTicker from "@/components/ProfilesTicker";
+import FAQ from "@/components/FAQ";
+import GridComponent from "@/components/GridComponent";
 
 // Register GSAP plugins
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -263,9 +265,7 @@ const page = () => {
       {/* Engineering Excellence Section */}
       <section className="flex w-full flex-col-reverse bg-black px-4 py-10 text-white md:flex md:flex-row md:px-10 md:py-20">
         {/* Placeholder for GridComponent */}
-        <div className="w-full md:w-1/2 h-64 bg-gray-800 flex items-center justify-center">
-          <p className="text-gray-400">Grid Component Placeholder</p>
-        </div>
+        <GridComponent />
 
         <div className="flex w-full flex-col items-start justify-start py-4 md:w-1/2 md:px-10">
           <h4>Engineering Excellence</h4>
@@ -303,18 +303,10 @@ const page = () => {
       {/* ProfilesTicker Placeholder */}
 
       <ProfilesTicker />
-      {/* <section className="py-10">
-        <div className="w-full h-32 bg-gray-100 flex items-center justify-center">
-          <p className="text-gray-600">Profiles Ticker Placeholder</p>
-        </div>
-      </section> */}
 
       {/* FAQ Placeholder */}
-      <section className="py-20 px-4 md:px-10">
-        <div className="w-full h-64 bg-gray-50 flex items-center justify-center">
-          <p className="text-gray-600">FAQ Component Placeholder</p>
-        </div>
-      </section>
+
+      <FAQ />
 
       {/* Final Hero Section */}
       <section className="font-NHD relative h-[100svh] w-full overflow-hidden">
