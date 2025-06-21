@@ -147,17 +147,18 @@ const page = () => {
             </Copy>
           </div>
           <div className="mt-10 w-full md:w-1/2">
-            <p className="w-full text-lg md:w-3/4 md:text-xl">
-              COAN West Africa Limited is a construction company offering
-              integrated solutions and related services. COAN is known for
-              executing complex engineering solution that require the highest
-              level of technical expertise be it
-              <br />
-              Civil Engineering services - Bridge construction, Road and Drain
-              construction, Dam construction, Public and Private building
-              structures.
-              <br />
-            </p>
+            <Copy>
+              <p className="w-full text-lg md:w-3/4 md:text-xl">
+                COAN West Africa Limited is a construction company offering
+                integrated solutions and related services. COAN is known for
+                executing complex engineering solution that require the highest
+                level of technical expertise be it
+                <br />
+                Civil Engineering services - Bridge construction, Road and Drain
+                construction, Dam construction, Public and Private building
+                structures.
+              </p>
+            </Copy>
 
             <Link href="/about" className="inline-block">
               <button className="mt-10 px-6 py-3 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors">
@@ -267,6 +268,29 @@ const page = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Engineering Excellence Section */}
+      <section className="flex w-full flex-col-reverse bg-black px-4 py-10 text-white md:flex md:flex-row md:px-10 md:py-20">
+        {/* Placeholder for GridComponent */}
+        <GridComponent />
+
+        <div className="flex w-full flex-col items-start justify-start py-4 md:w-1/2 md:px-10">
+          <h4>Engineering Excellence</h4>
+          <h2 className="mt-4 text-balance">
+            Where <span className="text-orange-400">Innovation</span> Meets{" "}
+            <span className="text-orange-400">Precision</span>
+          </h2>
+          <p className="mt-10 w-full pb-10 text-xl md:w-1/2">
+            With over 18 years of expertise in civil and electrical engineering,
+            we deliver transformative infrastructure projects that shape
+            tomorrow&apos;s communities. <br /> Our commitment to technical
+            excellence and sustainable solutions sets new industry standards.
+          </p>
+          <button className="mt-10 px-6 py-3 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors">
+            Learn more →
+          </button>
         </div>
       </section>
 
