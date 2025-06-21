@@ -32,6 +32,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* FOUC Prevention for GSAP animations */
+.gsap-fouc {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.gsap-fouc.gsap-ready {
+  opacity: 1;
+  visibility: visible;
+}
+
 h1 {
   @apply text-4xl font-normal md:text-6xl;
 }

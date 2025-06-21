@@ -36,7 +36,7 @@ export default function RootLayout({
         <LenisProvider>
           <ScrollToTop />
           <Navigation />
-          <main className="pt-16">{children}</main>
+          <main>{children}</main>
           <Footer />
         </LenisProvider>
       </body>

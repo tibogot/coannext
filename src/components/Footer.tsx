@@ -22,9 +22,8 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-6 sm:gap-10 md:flex-row md:justify-between">
               <div className="md:w-1/2">
                 <h2 className="text-xl sm:text-2xl">
-                  Sign up to our newsletter for
-                  <br />
-                  guidance, support and promotions.
+                  Sign up to our newsletter for guidance, support and
+                  promotions.
                 </h2>
               </div>
 

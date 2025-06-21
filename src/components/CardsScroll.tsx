@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useLenis } from "lenis/react";
+import Image from "next/image";
 import Copy from "../components/Copy1";
 import Button from "../components/Buttons";
 
@@ -34,21 +35,25 @@ function Card1() {
             </div>
 
             {/* Mobile Image */}
-            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden">
-              <img
-                src="plan.webp"
+            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden relative">
+              <Image
+                src="/plan.webp"
                 alt="Planning visual"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 25vw"
               />
             </div>
           </div>
 
           {/* Desktop Image */}
-          <div className="hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4">
-            <img
-              src="plan.webp"
+          <div className="hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4 relative">
+            <Image
+              src="/plan.webp"
               alt="Planning visual"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
+              sizes="25vw"
             />
           </div>
         </div>
@@ -81,21 +86,25 @@ function Card2() {
             </div>
 
             {/* Mobile Image */}
-            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden">
-              <img
-                src="design.webp"
+            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden relative">
+              <Image
+                src="/design-optimized.webp"
                 alt="Design visual"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 25vw"
               />
             </div>
           </div>
 
           {/* Desktop Image */}
-          <div className="hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4">
-            <img
-              src="design.webp"
+          <div className="hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4 relative">
+            <Image
+              src="/design-optimized.webp"
               alt="Design visual"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
+              sizes="25vw"
             />
           </div>
         </div>
@@ -130,21 +139,25 @@ function Card3() {
             </div>
 
             {/* Image fills remaining height ONLY on mobile */}
-            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden">
-              <img
-                src="operation.webp"
+            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden relative">
+              <Image
+                src="/operation-optimized.webp"
                 alt="Operation visual"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 25vw"
               />
             </div>
           </div>
 
           {/* RIGHT: Desktop Image only */}
-          <div className="right hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4">
-            <img
-              src="operation.webp"
+          <div className="right hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4 relative">
+            <Image
+              src="/operation-optimized.webp"
               alt="Operation visual"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
+              sizes="25vw"
             />
           </div>
         </div>
@@ -177,21 +190,25 @@ function Card4() {
             </div>
 
             {/* Mobile Image */}
-            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden">
-              <img
-                src="construction.webp"
+            <div className="mt-6 flex-grow overflow-hidden rounded-sm md:hidden relative">
+              <Image
+                src="/construction.webp"
                 alt="Construction visual"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 25vw"
               />
             </div>
           </div>
 
           {/* Desktop Image */}
-          <div className="hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4">
-            <img
-              src="construction.webp"
+          <div className="hidden h-full w-full overflow-hidden rounded-sm md:flex md:w-1/4 relative">
+            <Image
+              src="/construction.webp"
               alt="Construction visual"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
+              sizes="25vw"
             />
           </div>
         </div>

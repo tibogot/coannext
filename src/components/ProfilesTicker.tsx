@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Draggable from "gsap/Draggable";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
+import Image from "next/image";
 
 // Register plugins
 gsap.registerPlugin(Draggable, InertiaPlugin);
@@ -331,10 +332,12 @@ const ProfilesTicker = () => {
               className="profile-card group relative m-4 flex h-[400px] w-[300px] cursor-pointer flex-col md:h-[600px] md:w-[450px]"
             >
               <div className="group relative h-[80%] w-full overflow-hidden">
-                <img
+                <Image
                   src={profile.image}
                   alt={profile.name}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-600 ease-in-out group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-600 ease-in-out group-hover:scale-105"
+                  sizes="(max-width: 768px) 300px, 450px"
                 />
               </div>
               <div className="flex flex-col justify-between p-4">
@@ -352,10 +355,12 @@ const ProfilesTicker = () => {
             >
               {/* Profile Image */}
               <div className="group relative h-[80%] w-full overflow-hidden">
-                <img
+                <Image
                   src={profile.image}
                   alt={profile.name}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-600 ease-in-out group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-600 ease-in-out group-hover:scale-105"
+                  sizes="(max-width: 768px) 300px, 450px"
                 />
               </div>
 

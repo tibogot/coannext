@@ -17,12 +17,14 @@ interface CopyProps {
   children: ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
+  isHero?: boolean;
 }
 
 export default function Copy({
   children,
   animateOnScroll = true,
   delay = 0,
+  isHero = false,
 }: CopyProps): ReactElement {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const elementRef = useRef<HTMLElement[]>([]);
@@ -86,13 +88,11 @@ export default function Copy({
             if (textIndent && textIndent != "0px") {
               if (split.lines.length > 0) {
                 //@ts-ignore
-
                 split.lines[0].style.paddingLeft = textIndent;
               }
               element.style.textIndent = "0";
             }
             //@ts-ignore
-
             lines.current.push(...split.lines);
           } catch (error) {
             console.warn("SplitText error:", error);
@@ -103,6 +103,11 @@ export default function Copy({
 
         gsap.set(lines.current, { y: "100%" });
 
+        // Add gsap-ready class to prevent FOUC
+        if (containerRef.current) {
+          containerRef.current.classList.add("gsap-ready");
+        }
+
         const animationProps = {
           y: "0%",
           duration: 1,
@@ -112,14 +117,33 @@ export default function Copy({
         };
 
         if (animateOnScroll) {
-          gsap.to(lines.current, {
-            ...animationProps,
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top 75%",
-              once: true,
-            },
-          });
+          // Check if element is already in viewport
+          //@ts-ignore
+          const rect = containerRef.current.getBoundingClientRect();
+          const isInInitialViewport = rect.top < window.innerHeight * 0.75;
+
+          if (isHero || isInInitialViewport) {
+            // For hero elements or elements already in view, use more lenient trigger
+            gsap.to(lines.current, {
+              ...animationProps,
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 95%",
+                once: true,
+                refreshPriority: 1,
+              },
+            });
+          } else {
+            // Standard trigger for elements below the fold
+            gsap.to(lines.current, {
+              ...animationProps,
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 75%",
+                once: true,
+              },
+            });
+          }
         } else {
           gsap.to(lines.current, animationProps);
         }
@@ -139,7 +163,7 @@ export default function Copy({
     },
     {
       scope: containerRef,
-      dependencies: [fontsLoaded, animateOnScroll, delay],
+      dependencies: [fontsLoaded, animateOnScroll, delay, isHero],
     }
   );
 

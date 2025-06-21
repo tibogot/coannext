@@ -83,8 +83,8 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
             <Image
               src="/coannav.svg"
               alt="Company Logo"
-              width={120}
-              height={48}
+              width={0}
+              height={0}
               className="h-12 w-auto object-contain"
               priority
             />
@@ -171,8 +171,8 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
               <Image
                 src="/coannav.svg"
                 alt="Company Logo"
-                width={120}
-                height={48}
+                width={0}
+                height={0}
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </Link>

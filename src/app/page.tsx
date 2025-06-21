@@ -88,7 +88,7 @@ const page = () => {
   return (
     <div className="wrapper font-NHD">
       {/* Hero Section */}
-      <section className="hero relative -mt-18 h-[100svh] w-full overflow-hidden p-4 text-white md:p-10">
+      <section className="hero relative h-screen w-full overflow-hidden p-4 text-white md:p-10">
         <div className="bgimg2 absolute inset-0 z-0 scale-100">
           <Image
             src="/coan2bg.webp"
@@ -97,6 +97,8 @@ const page = () => {
             className="object-cover object-center"
             priority
             sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           />
         </div>
         <div className="relative z-10 flex h-full items-end md:items-center">
@@ -109,12 +111,15 @@ const page = () => {
                 height={200}
                 className="h-auto w-full"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <div className="mx-2">
-              <p className="text-base md:text-xl">
-                Construction Company West Africa
-              </p>
+              <Copy isHero>
+                <p className="text-base md:text-xl gsap-fouc">
+                  Construction Company West Africa
+                </p>
+              </Copy>
             </div>
           </div>
         </div>
@@ -137,7 +142,9 @@ const page = () => {
         </div>
         <div className="mt-14 flex-row md:mt-30 md:flex">
           <div className="w-full md:w-1/2">
-            <h3 className="w-full md:w-1/2">A Tradition Of Excellence</h3>
+            <Copy>
+              <h3 className="w-full md:w-1/2">A Tradition Of Excellence</h3>
+            </Copy>
           </div>
           <div className="mt-10 w-full md:w-1/2">
             <p className="w-full text-lg md:w-3/4 md:text-xl">
@@ -159,6 +166,7 @@ const page = () => {
               Mechanical Engineering services – Construction of Water supply
               network, Sewer and Sewage network.
             </p>
+
             <Link href="/about" className="inline-block">
               <button className="mt-10 px-6 py-3 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors">
                 Learn more →
@@ -174,11 +182,13 @@ const page = () => {
           {/* Section 1 (top) */}
           <div className="section1 absolute inset-0 z-30 origin-center scale-75">
             <Image
-              src="/5V6A0113-scaled.jpg"
+              src="/5V6A0113-optimized.webp"
               alt="Integrated services"
               fill
               className="object-cover"
               sizes="100vw"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/0 px-4 text-center text-white">
               <h2>
@@ -195,11 +205,13 @@ const page = () => {
             style={{ clipPath: "inset(100% 0 0 0)" }}
           >
             <Image
-              src="/5V6A0592-scaled.jpg"
+              src="/5V6A0592-optimized.webp"
               alt="Engineering solutions"
               fill
               className="object-cover"
               sizes="100vw"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/0 px-4 text-center text-white">
               <h2>
@@ -220,6 +232,8 @@ const page = () => {
               fill
               className="object-cover"
               sizes="100vw"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/20 px-4 text-center text-white">
               <h2>
@@ -239,7 +253,7 @@ const page = () => {
 
         <div className="wrapper w-full md:flex">
           <div className="left flex flex-col justify-between md:w-1/2">
-            <h2 className="mt-4 w-full md:w-3/4">
+            <h2 className="mt-4 w-full ">
               To be the most trusted and innovative construction company in West
               Africa
             </h2>
@@ -251,37 +265,16 @@ const page = () => {
           <div className="right grow">
             <div className="img-wrapper mt-10 h-[400px] w-full md:mt-4 relative">
               <Image
-                src="/road.webp"
+                src="/road-optimized.webp"
                 alt="Road construction"
                 fill
                 className="road-img scale-0 object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Engineering Excellence Section */}
-      <section className="flex w-full flex-col-reverse bg-black px-4 py-10 text-white md:flex md:flex-row md:px-10 md:py-20">
-        {/* Placeholder for GridComponent */}
-        <GridComponent />
-
-        <div className="flex w-full flex-col items-start justify-start py-4 md:w-1/2 md:px-10">
-          <h4>Engineering Excellence</h4>
-          <h2 className="mt-4 text-balance">
-            Where <span className="text-orange-400">Innovation</span> Meets{" "}
-            <span className="text-orange-400">Precision</span>
-          </h2>
-          <p className="mt-10 w-full pb-10 text-xl md:w-1/2">
-            With over 18 years of expertise in civil and electrical engineering,
-            we deliver transformative infrastructure projects that shape
-            tomorrow&apos;s communities. <br /> Our commitment to technical
-            excellence and sustainable solutions sets new industry standards.
-          </p>
-          <button className="mt-10 px-6 py-3 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors">
-            Learn more →
-          </button>
         </div>
       </section>
 
@@ -310,16 +303,17 @@ const page = () => {
 
       {/* Final Hero Section */}
       <section className="font-NHD relative h-[100svh] w-full overflow-hidden">
-        <div className="relative flex h-full items-center justify-center bg-[url('https://images.unsplash.com/photo-1710582307396-5ca7b4390aa8?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
+        <div className="relative flex h-full items-center justify-center bg-[url('/coan2bg.webp')] bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 bg-black/10"></div>
 
           <div className="w-1/4 relative z-10">
             <Image
               src="/coanlogobig.svg"
               alt="Company Logo"
-              width={400}
-              height={200}
-              className="object-contain"
+              width={0}
+              height={0}
+              className="object-contain w-full h-auto"
+              sizes="25vw"
             />
           </div>
 
