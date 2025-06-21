@@ -375,7 +375,7 @@ export default function HomeCard() {
         </div>
       </section>
 
-      <section className="cards relative space-y-4 md:space-y-0">
+      <section className="cards relative space-y-0 md:space-y-0">
         <Card1 />
         <Card2 />
         <Card3 />

@@ -157,14 +157,6 @@ const page = () => {
               construction, Dam construction, Public and Private building
               structures.
               <br />
-              <br />
-              Electrical Engineering services - Power supply infrastructure,
-              Street lights installation, Telecommunication and ICT
-              infrastructure.
-              <br />
-              <br />
-              Mechanical Engineering services – Construction of Water supply
-              network, Sewer and Sewage network.
             </p>
 
             <Link href="/about" className="inline-block">
