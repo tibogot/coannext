@@ -420,7 +420,7 @@ export default function HomeCard() {
           </div>
         </div>
         <div className="center-banner mt-8 rounded-sm bg-amber-400 md:mt-16">
-          <div className="imgwrapper relative flex h-[300px] w-full items-center justify-center rounded-sm bg-amber-200 bg-[url(/grid-images/image-8.webp)] bg-cover bg-center text-white md:h-[400px]">
+          <div className="imgwrapper relative flex h-[300px] w-full items-center justify-center rounded-sm bg-amber-200 bg-[url(/grid-images/optimized-image-8.webp)] bg-cover bg-center text-white md:h-[400px]">
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 px-4"></div>
 
             <div className="flex flex-col items-center justify-center px-4 text-center">
