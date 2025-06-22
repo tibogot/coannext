@@ -1,291 +1,162 @@
-import Link from "next/link";
+"use client";
+import Image from "next/image";
+import Copy from "@/components/Copy1";
+// import PulsingMap from "../components/MapSvg";
 
-export default function Services() {
-  const services = [
-    {
-      icon: "🌐",
-      title: "Web Development",
-      description:
-        "Custom web applications built with modern technologies like Next.js, React, and Node.js.",
-      features: [
-        "Responsive Design",
-        "SEO Optimization",
-        "Performance Tuning",
-        "Security Best Practices",
-      ],
-      price: "From $5,000",
-    },
-    {
-      icon: "📱",
-      title: "Mobile Development",
-      description:
-        "Native and cross-platform mobile applications for iOS and Android platforms.",
-      features: [
-        "Native iOS/Android",
-        "Cross-platform (React Native)",
-        "App Store Optimization",
-        "Push Notifications",
-      ],
-      price: "From $8,000",
-    },
-    {
-      icon: "🎨",
-      title: "UI/UX Design",
-      description:
-        "Beautiful and intuitive user interfaces that enhance user experience and drive engagement.",
-      features: [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
-        "Design Systems",
-      ],
-      price: "From $3,000",
-    },
-    {
-      icon: "☁️",
-      title: "Cloud Solutions",
-      description:
-        "Scalable cloud infrastructure and DevOps solutions for modern applications.",
-      features: [
-        "AWS/Azure/GCP",
-        "CI/CD Pipelines",
-        "Monitoring & Logging",
-        "Security & Compliance",
-      ],
-      price: "From $2,000",
-    },
-    {
-      icon: "🤖",
-      title: "AI Integration",
-      description:
-        "Intelligent solutions powered by machine learning and artificial intelligence.",
-      features: [
-        "Chatbots",
-        "Data Analysis",
-        "Predictive Analytics",
-        "Automation",
-      ],
-      price: "From $10,000",
-    },
-    {
-      icon: "🔧",
-      title: "Consulting",
-      description:
-        "Strategic technology consulting to help you make informed decisions.",
-      features: [
-        "Technical Audits",
-        "Architecture Planning",
-        "Team Training",
-        "Project Management",
-      ],
-      price: "From $150/hour",
-    },
-  ];
-
-  const process = [
-    {
-      step: "01",
-      title: "Discovery",
-      description:
-        "We start by understanding your business goals, target audience, and technical requirements.",
-    },
-    {
-      step: "02",
-      title: "Planning",
-      description:
-        "We create a detailed project plan, timeline, and technical architecture.",
-    },
-    {
-      step: "03",
-      title: "Design",
-      description:
-        "Our design team creates beautiful, user-friendly interfaces and experiences.",
-    },
-    {
-      step: "04",
-      title: "Development",
-      description:
-        "We build your solution using modern technologies and best practices.",
-    },
-    {
-      step: "05",
-      title: "Testing",
-      description:
-        "Rigorous testing ensures your solution works perfectly across all devices.",
-    },
-    {
-      step: "06",
-      title: "Launch",
-      description:
-        "We deploy your solution and provide ongoing support and maintenance.",
-    },
-  ];
-
+const Services = () => {
   return (
-    <div className="min-h-screen">
+    <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Services
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From concept to deployment, we offer comprehensive digital
-              solutions that help businesses grow and succeed in the digital
-              age.
-            </p>
-          </div>
+      <section className="font-NHD hero relative flex h-[100svh] w-full items-end bg-red-300 p-4 text-white md:p-10">
+        <div className="absolute top-0 left-0 h-full w-full">
+          <Image
+            src="/grid-images/optimized-image-4.webp"
+            alt="Services hero background"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          />
         </div>
+        <div className="absolute top-0 left-0 h-full w-full bg-black/10"></div>
+        <Copy isHero>
+          <h1 className="max-w-4xl text-3xl font-bold gsap-fouc">
+            Comprehensive Engineering Solutions Across Civil, Electrical &
+            Mechanical Disciplines
+          </h1>
+        </Copy>
       </section>
-
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What We Offer
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive digital solutions tailored to your specific needs
-              and goals.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-xl p-8 hover:bg-gray-100 transition-colors duration-200 border border-gray-200"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className="flex items-center text-sm text-gray-600"
-                    >
-                      <span className="text-blue-600 mr-2">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="text-2xl font-bold text-blue-600 mb-4">
-                  {service.price}
-                </div>
-                <Link
-                  href="/contact"
-                  className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
-                >
-                  Get Started
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A proven methodology that ensures successful project delivery and
-              client satisfaction.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {process.map((step, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                <div className="text-4xl font-bold text-blue-600 mb-4">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technologies Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Technologies We Use
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We leverage the latest technologies to build fast, scalable, and
-              secure solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              "Next.js",
-              "React",
-              "TypeScript",
-              "Node.js",
-              "Python",
-              "AWS",
-              "Docker",
-              "PostgreSQL",
-              "MongoDB",
-              "Redis",
-              "GraphQL",
-              "Tailwind CSS",
-            ].map((tech, index) => (
-              <div
-                key={index}
-                className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-              >
-                <div className="text-2xl font-bold text-gray-900">{tech}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let's discuss your requirements and create a custom solution for
-            your business.
+      {/* Services Section */}
+      <section className="font-NHD secondsection overflow-visible px-4 py-10 md:px-10 md:pb-30">
+        <Copy>
+          <h4 className="text-orange-400">Our services</h4>
+        </Copy>
+        <Copy>
+          <h1 className="mt-4 w-full md:w-3/4">
+            Discover the <span className="text-orange-400">services</span>{" "}
+            <br />
+            we have to <span className="text-orange-400">offer.</span>
+          </h1>
+          <p className="mt-22 w-full text-lg md:w-1/4 md:text-xl">
+            Our diverse range of services is designed to meet the unique needs
+            of each project, ensuring optimal outcomes and client satisfaction.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
-            >
-              Get a Quote
-            </Link>
-            <Link
-              href="/about"
-              className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200 font-medium"
-            >
-              Learn More
-            </Link>
+        </Copy>
+
+        <div className="mt-14 grid grid-cols-1 gap-10 text-white md:grid-cols-3">
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Preconstruction <br />
+              Services
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Comprehensive planning, feasibility studies, and detailed cost
+              analysis to ensure project success from the very beginning.
+            </p>
+          </div>
+
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Construction <br />
+              Management
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              End-to-end project oversight ensuring seamless coordination,
+              quality control, and optimal resource utilization throughout
+              execution.
+            </p>
+          </div>
+
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Road <br />
+              Construction
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Expert construction of highways, urban roads, and bridges using
+              advanced techniques and sustainable materials for lasting
+              infrastructure.
+            </p>
+          </div>
+        </div>
+        <div className="mt-14 grid grid-cols-1 gap-10 text-white md:grid-cols-3">
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Street Light <br />
+              Installation
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Modern lighting solutions for urban areas, enhancing safety and
+              efficiency with sustainable LED technology and smart controls.
+            </p>
+          </div>
+
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              District <br />
+              Network
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Design and implementation of robust power distribution networks,
+              ensuring reliable electricity supply to communities and
+              businesses.
+            </p>
+          </div>
+
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Sewage <br />
+              Network
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              State-of-the-art sewage systems designed for efficiency and
+              environmental compliance, serving urban and industrial areas.
+            </p>
+          </div>
+        </div>
+        <div className="mt-14 grid grid-cols-1 gap-10 text-white md:grid-cols-3">
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Dams & <br />
+              Dredging
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Specialized in dam construction and waterway maintenance through
+              advanced dredging techniques for improved water management.
+            </p>
+          </div>
+
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Water Supply & <br />
+              Distribution
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Development of comprehensive water infrastructure systems, from
+              treatment plants to distribution networks for reliable water
+              access.
+            </p>
+          </div>
+
+          <div className="group flex h-[400px] flex-col justify-between rounded-sm bg-orange-400 p-6 transition-all duration-300 hover:bg-orange-500 hover:scale-105">
+            <h3 className="text-xl font-medium">
+              Infrastructure <br />
+              Maintenance
+            </h3>
+            <p className="w-full text-xl md:w-3/4">
+              Proactive maintenance and rehabilitation services for civil and
+              electrical infrastructure, ensuring long-term reliability and
+              performance.
+            </p>
           </div>
         </div>
       </section>
-    </div>
+      <section className="h-screen bg-amber-200"></section>
+      {/* <PulsingMap /> */}
+    </>
   );
-}
+};
+
+export default Services;
