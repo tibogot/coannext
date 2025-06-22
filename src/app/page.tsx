@@ -220,7 +220,7 @@ const page = () => {
             style={{ clipPath: "inset(100% 0 0 0)" }}
           >
             <Image
-              src="/grid-images/image-2.webp"
+              src="/grid-images/optimized-image-2.webp"
               alt="Building the future"
               fill
               className="object-cover"
