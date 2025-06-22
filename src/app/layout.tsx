@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coan - Modern Web Solutions",
+  title: "Coan - Construction Company West Africa",
   description:
-    "Building the future with innovative web solutions. We create exceptional digital experiences that drive results.",
+    "Coan is a construction company that provides construction services to clients in West Africa.",
 };
 
 export default function RootLayout({
