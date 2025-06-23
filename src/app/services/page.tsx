@@ -153,7 +153,31 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="h-screen bg-amber-200"></section>
+      {/* Final Hero Section */}
+      <section className="font-NHD relative h-[100svh] w-full overflow-hidden">
+        <div className="relative flex h-full items-center justify-center bg-[url('/coan2bg.webp')] bg-cover bg-center bg-no-repeat">
+          <div className="absolute inset-0 bg-black/10"></div>
+
+          <div className="w-1/4 relative z-10">
+            <Image
+              src="/coanlogobig.svg"
+              alt="Company Logo"
+              width={0}
+              height={0}
+              className="object-contain w-full h-auto"
+              sizes="25vw"
+            />
+          </div>
+
+          <div className="absolute top-20 z-10 flex w-full justify-start px-4 text-white md:px-10">
+            <h2>
+              Building the Future with
+              <br />
+              Precision & Expertise.
+            </h2>
+          </div>
+        </div>
+      </section>
       {/* <PulsingMap /> */}
     </>
   );

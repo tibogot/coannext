@@ -1,5 +1,7 @@
 "use client";
 import Copy from "@/components/Copy1";
+import Image from "next/image";
+
 // import Polar from "../components/Polar";
 import ProfilesGrid from "@/components/ProfileGrid";
 // import Button from "../components/Buttons";
@@ -94,25 +96,26 @@ const About = () => {
         </div>
       </section>
       <section className="font-NHD relative h-[100svh] w-full overflow-hidden">
-        <div className="relative flex h-full items-center justify-center bg-[url('https://images.unsplash.com/photo-1710582307396-5ca7b4390aa8?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
-          {/* Dark Overlay */}
+        <div className="relative flex h-full items-center justify-center bg-[url('/coan2bg.webp')] bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 bg-black/10"></div>
-          <div className="w-1/4">
-            <img
+
+          <div className="w-1/4 relative z-10">
+            <Image
               src="/coanlogobig.svg"
               alt="Company Logo"
-              className="object-contain"
+              width={0}
+              height={0}
+              className="object-contain w-full h-auto"
+              sizes="25vw"
             />
           </div>
 
-          {/* Text Container */}
           <div className="absolute top-20 z-10 flex w-full justify-start px-4 text-white md:px-10">
-            <Copy>
-              <h2 className="">
-                Building the Future with Precision
-                <br />& Expertise.
-              </h2>
-            </Copy>
+            <h2>
+              Building the Future with
+              <br />
+              Precision & Expertise.
+            </h2>
           </div>
         </div>
       </section>

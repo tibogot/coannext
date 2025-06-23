@@ -13,6 +13,12 @@ const Gallery = () => {
   const [isInitialImageLoaded, setIsInitialImageLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
+  // Mobile carousel state
+  const [isMobileCarouselOpen, setIsMobileCarouselOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
   // Preload the first few images for better performance
   useEffect(() => {
     // Preload the first image and a few more
@@ -41,6 +47,16 @@ const Gallery = () => {
   }, [images, isInitialImageLoaded]);
 
   const handleImageClick = (src: string) => {
+    // Check if we're on mobile (screen width < 1024px)
+    if (window.innerWidth < 1024) {
+      // Open mobile carousel
+      const imageIndex = images.indexOf(src);
+      setCurrentImageIndex(imageIndex);
+      setIsMobileCarouselOpen(true);
+      return;
+    }
+
+    // Desktop behavior (existing code)
     // Prevent clicking the same image multiple times
     if (selectedImage === src) {
       return;
@@ -97,6 +113,66 @@ const Gallery = () => {
       }
     };
   };
+
+  // Mobile carousel functions
+  const closeMobileCarousel = () => {
+    console.log("Closing mobile carousel"); // Debug log
+    setIsMobileCarouselOpen(false);
+  };
+
+  const goToNextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const goToPreviousImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      goToNextImage();
+    }
+    if (isRightSwipe) {
+      goToPreviousImage();
+    }
+
+    // Reset values
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isMobileCarouselOpen) return;
+
+      if (e.key === "Escape") {
+        closeMobileCarousel();
+      } else if (e.key === "ArrowLeft") {
+        goToPreviousImage();
+      } else if (e.key === "ArrowRight") {
+        goToNextImage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileCarouselOpen]);
 
   return (
     <>
@@ -179,6 +255,124 @@ const Gallery = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Carousel Overlay */}
+      {isMobileCarouselOpen && (
+        <div className="fixed inset-0 z-90 bg-black">
+          {/* Clickable overlay background to close */}
+          <div className="absolute inset-0 z-0" onClick={closeMobileCarousel} />
+
+          {/* Close button */}
+          <button
+            onClick={closeMobileCarousel}
+            className="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* Image counter */}
+          <div className="absolute top-4 left-4 z-20 rounded-full bg-black/50 px-3 py-1 text-sm text-white backdrop-blur-sm">
+            {currentImageIndex + 1} / {images.length}
+          </div>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={goToPreviousImage}
+            className="absolute left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={goToNextImage}
+            className="absolute right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Image container with touch handling */}
+          <div
+            className="relative z-10 flex h-full w-full items-center justify-center"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src={images[currentImageIndex]}
+                alt={`Gallery image ${currentImageIndex + 1}`}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Final Hero Section */}
+      <section className="font-NHD relative h-[100svh] w-full overflow-hidden">
+        <div className="relative flex h-full items-center justify-center bg-[url('/coan2bg.webp')] bg-cover bg-center bg-no-repeat">
+          <div className="absolute inset-0 bg-black/10"></div>
+
+          <div className="w-1/4 relative z-10">
+            <Image
+              src="/coanlogobig.svg"
+              alt="Company Logo"
+              width={0}
+              height={0}
+              className="object-contain w-full h-auto"
+              sizes="25vw"
+            />
+          </div>
+
+          <div className="absolute top-20 z-10 flex w-full justify-start px-4 text-white md:px-10">
+            <h2>
+              Building the Future with
+              <br />
+              Precision & Expertise.
+            </h2>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
