@@ -27,7 +27,7 @@ function Card1() {
               <div className="mt-12" />
 
               <Copy>
-                <p className="text-lg md:w-2/3 md:text-xl">
+                <p className="text-lg md:w-1/3 md:text-xl">
                   Creating an ordered timeline of events, staffing the project
                   and determining the necessary materials and equipments.
                 </p>
@@ -78,7 +78,7 @@ function Card2() {
               <div className="mt-12" />
 
               <Copy>
-                <p className="text-lg md:w-2/3 md:text-xl">
+                <p className="text-lg md:w-1/3 md:text-xl">
                   We work hard to develop innovative and cost-effective
                   solutions for our client both public and private.
                 </p>
@@ -129,7 +129,7 @@ function Card3() {
               <div className="mt-12" />
 
               <Copy>
-                <p className="text-lg md:w-2/3 md:text-xl">
+                <p className="text-lg md:w-1/3 md:text-xl">
                   We emphasize on a broad spectrum of services, competences,
                   processes and tools to assure the built environment will
                   perform the functions for which a facility was designed and
@@ -182,7 +182,7 @@ function Card4() {
               <div className="mt-12" />
 
               <Copy>
-                <p className="text-lg md:w-2/3 md:text-xl">
+                <p className="text-lg md:w-1/3 md:text-xl">
                   Innovative execution methods to deliver safe, high quality
                   project is the foundation of our business and success.
                 </p>
