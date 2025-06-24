@@ -176,7 +176,7 @@ const Gallery = () => {
 
   return (
     <>
-      <section className="hero font-NHD relative flex h-[100svh] w-full items-end bg-red-300 p-4 text-white md:p-10">
+      <section className="hero font-NHD relative flex h-[100svh] w-full items-end  p-4 text-white md:p-10">
         <div className="absolute top-0 left-0 h-full w-full">
           <Image
             src="/gallery-img-optimized.webp"

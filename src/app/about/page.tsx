@@ -11,7 +11,7 @@ const About = () => {
     <>
       {/* Hero Section */}
 
-      <section className="font-NHD hero relative  flex h-[100svh] w-full items-end bg-red-300 p-4 text-white md:p-10">
+      <section className="font-NHD hero relative  flex h-[100svh] w-full items-end  p-4 text-white md:p-10">
         <div className="absolute top-0 left-0 h-full w-full bg-[url(/about-img.webp)]"></div>
         <div className="absolute top-0 left-0 h-full w-full bg-black/10"></div>
         <Copy isHero>
