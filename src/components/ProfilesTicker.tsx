@@ -315,7 +315,7 @@ const ProfilesTicker = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden py-0">
+    <div className="relative w-full overflow-hidden py-0 z-10">
       <div className="inline-flex w-max">
         <div
           ref={tickerRef}

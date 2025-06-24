@@ -90,6 +90,12 @@ const Footer: React.FC = () => {
                 >
                   Gallery
                 </Link>
+                <Link
+                  href="/contact"
+                  className="hover:text-orange-500 transition-colors focus:outline-none focus:text-orange-500"
+                >
+                  Contact
+                </Link>
               </nav>
               <address className="not-italic">
                 <h5 className="mb-2 font-semibold">ADDRESS</h5>
