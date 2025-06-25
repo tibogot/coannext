@@ -29,11 +29,11 @@ const About = () => {
           <h4 className="text-orange-400">About us</h4>
         </Copy>
         <Copy>
-          <h1 className="mt-4 w-full md:w-3/4">
+          <h1 className="mt-4 w-full md:w-1/2">
             Engineering <span className="text-orange-400">Excellence,</span>
             <br />
             Technical Innovation and Integrated Construction
-            <span className="text-orange-400">Solutions.</span>
+            <span className="text-orange-400"> Solutions.</span>
           </h1>
         </Copy>
         <div className="mt-34 h-[800px] w-full rounded-sm">

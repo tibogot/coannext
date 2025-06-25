@@ -130,7 +130,7 @@ const page = () => {
         <div>
           <h4 className="text-orange-400">About us</h4>
           <Copy>
-            <h1 className="mt-4 w-full md:w-3/4">
+            <h1 className="mt-4 w-full md:w-1/2">
               A construction <span className="text-orange-400">company,</span>
               <br />
               offering integrated solution and

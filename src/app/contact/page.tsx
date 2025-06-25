@@ -60,7 +60,7 @@ const Contact = () => {
           <h4 className="text-orange-400">Contact us</h4>
         </Copy>
         <Copy>
-          <h1 className="mt-4 w-full md:w-3/4">
+          <h1 className="mt-4 w-full md:w-1/2">
             Get in <span className="text-orange-400">touch.</span>
           </h1>
           <p className="mt-22 w-full text-lg md:w-1/2 md:text-xl">

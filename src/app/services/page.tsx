@@ -34,7 +34,7 @@ const Services = () => {
           <h4 className="text-orange-400">Our services</h4>
         </Copy>
         <Copy>
-          <h1 className="mt-4 w-full md:w-3/4">
+          <h1 className="mt-4 w-full md:w-1/2">
             Discover the <span className="text-orange-400">services</span>{" "}
             <br />
             we have to <span className="text-orange-400">offer.</span>
