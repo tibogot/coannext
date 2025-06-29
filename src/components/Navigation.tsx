@@ -51,14 +51,8 @@ const Navbar: React.FC<NavbarProps> = ({ lenis }) => {
 
   const handleNavClick = (path: string) => {
     if (pathname === path) {
-      // Scroll to a negative position first to ensure we reach the absolute top
-      // This accounts for any viewport height issues or gaps
-      lenis?.scrollTo(-100, { immediate: true });
-
-      // Then immediately scroll to 0 to ensure we're at the very top
-      setTimeout(() => {
-        lenis?.scrollTo(0, { immediate: true });
-      }, 10);
+      // Scroll to top immediately when clicking on current page
+      lenis?.scrollTo(0, { immediate: true });
     }
     setIsMenuOpen(false);
   };
